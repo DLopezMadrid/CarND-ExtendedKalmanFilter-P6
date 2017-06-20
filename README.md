@@ -1,11 +1,39 @@
 # Extended Kalman Filter Project Starter Code
 Self-Driving Car Engineer Nanodegree Program
 
-In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
+[DS1]: ./imgs/Dataset1_EKF.jpg
+[DS2]: ./imgs/Dataset2_EKF.jpg
+
+
+[![IMAGE ALT TEXT](./imgs/EKF_closeup.jpg)](https://www.youtube.com/watch?v=6RV0D-09DCk "EKF video")
+**Click on the image to go to the youtube video**
+
+I achieved the following RMSE results in Dataset 1 by using an EKF:
+
+|    | Fused data | Just lidar | Just radar |
+|:--:|:----------:|:----------:|:----------:|
+| px |   0.0973   |   0.1222   |   0.1909   |
+| py |   0.0855   |   0.0984   |   0.2799   |
+| vx |   0.4513   |   0.5825   |   0.4534   |
+| vy |   0.4399   |   0.4567   |   0.6776   |
+
+As you can see, the fused result is better than any of the individual ones. It is also important to remark that the lidar is much more accurate than the radar, specially in the lateral position and while the lidar cannot measure directly the velocity of the target, it is still able to do an acceptable job (specially in the lateral velocity). On the other hand, the radar is better than the lidar in measuring the longitudinal speed of the target.
+
+  Fusion results in Dataset 1:
+  ![DS1]
+
+
+  Fusion results in Dataset 2:
+  ![DS2]
+
+-----
+
+
+In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric.
 
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
 
-This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. 
+This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO.
 
 Once the install for uWebSocketIO is complete, the main program can be built and run by doing the following from the project top directory.
 
@@ -55,7 +83,7 @@ OUTPUT: values provided by the c++ program to the simulator
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make` 
+3. Compile: `cmake .. && make`
    * On windows, you may need to run: `cmake .. -G "Unix Makefiles" && make`
 4. Run it: `./ExtendedKF `
 
