@@ -19,10 +19,12 @@ I achieved the following RMSE results in Dataset 1 by using an EKF:
 
 As you can see, the fused result is better than any of the individual ones. It is also important to remark that the lidar is much more accurate than the radar, specially in the lateral position and while the lidar cannot measure directly the velocity of the target, it is still able to do an acceptable job (specially in the lateral velocity). On the other hand, the radar is better than the lidar in measuring the longitudinal speed of the target.
 
+-----
+
   Fusion results in Dataset 1:
   ![DS1]
 
-
+----  
   Fusion results in Dataset 2:
   ![DS2]
 
